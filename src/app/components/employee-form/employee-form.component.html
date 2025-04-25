@@ -1,0 +1,89 @@
+<div class="employee-form">
+  <h2>{{ isEditMode ? 'Edit Employee' : 'Add New Employee' }}</h2>
+  
+  <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="employee.name"
+        required
+        #name="ngModel"
+      >
+      <div class="error" *ngIf="name.invalid && (name.dirty || name.touched)">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="companyName">Company Name</label>
+      <input
+        type="text"
+        id="companyName"
+        name="companyName"
+        [(ngModel)]="employee.companyName"
+        required
+        #companyName="ngModel"
+      >
+      <div class="error" *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+        Company name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="employee.email"
+        required
+        email
+        #email="ngModel"
+      >
+      <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+        Valid email is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contactNo">Contact Number</label>
+      <input
+        type="tel"
+        id="contactNo"
+        name="contactNo"
+        [(ngModel)]="employee.contactNo"
+        required
+        pattern="[0-9]{10}"
+        #contactNo="ngModel"
+      >
+      <div class="error" *ngIf="contactNo.invalid && (contactNo.dirty || contactNo.touched)">
+        Valid 10-digit contact number is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="designation">Designation</label>
+      <input
+        type="text"
+        id="designation"
+        name="designation"
+        [(ngModel)]="employee.designation"
+        required
+        #designation="ngModel"
+      >
+      <div class="error" *ngIf="designation.invalid && (designation.dirty || designation.touched)">
+        Designation is required
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="cancel-btn" routerLink="/">Cancel</button>
+      <button type="submit" class="submit-btn" [disabled]="employeeForm.invalid">
+        {{ isEditMode ? 'Update' : 'Add' }} Employee
+      </button>
+    </div>
+  </form>
+</div> 

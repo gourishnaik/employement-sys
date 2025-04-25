@@ -1,0 +1,20 @@
+<div class="employee-list">
+  <h2>Employee List</h2>
+  <button class="add-button" routerLink="/add">Add New Employee</button>
+  
+  <div class="employee-grid">
+    <div class="employee-card" *ngFor="let employee of employees">
+      <img [src]="employee.avatar" alt="Employee Avatar" class="avatar">
+      <div class="employee-info">
+        <h3>{{ employee.name }}</h3>
+        <p><strong>Company:</strong> {{ employee.companyName }}</p>
+        <p><strong>Designation:</strong> {{ employee.designation }}</p>
+      </div>
+      <div class="actions">
+        <button (click)="onView(employee.id)" class="view-btn">View</button>
+        <button (click)="onEdit(employee.id)" class="edit-btn">Edit</button>
+        <button (click)="onDelete(employee.id)" class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div> 
