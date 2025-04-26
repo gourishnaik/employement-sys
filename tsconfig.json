@@ -21,9 +21,12 @@
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",
-      "dom"
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
