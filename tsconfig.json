@@ -22,11 +22,9 @@
     "lib": [
       "ES2022",
       "dom",
-      "dom.iterable",
-      "scripthost"
+      "dom.iterable"
     ],
-    "skipLibCheck": true,
-    "types": ["node"]
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
