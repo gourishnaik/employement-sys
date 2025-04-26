@@ -1,8 +1,6 @@
-<!-- Replace the entire content with our new layout -->
 <div class="app-container">
   <header class="app-header">
     <h1>Hotel Billing System</h1>
-  
   </header>
 
   <main class="app-content">
@@ -14,11 +12,6 @@
       <app-order-summary></app-order-summary>
     </div>
   </main>
-
-  <footer class="app-footer">
-    <p>Designed and Developed by Gourish</p>
-  </footer>
 </div>
 
-<app-snackbar></app-snackbar>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 
