@@ -1,33 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuItemsComponent } from './components/menu-items/menu-items.component';
-import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
-import { BillDetailsComponent } from './components/bill-details/bill-details.component';
-import { BillingService } from './services/billing.service';
-import { MenuService } from './services/menu.service';
-import { SnackbarComponent } from './shared/snackbar/snackbar.component';
-import { SnackbarService } from './shared/snackbar/snackbar.service';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuItemsComponent,
-    OrderSummaryComponent,
-    BillDetailsComponent,
-    SnackbarComponent
+    EmployeeListComponent,
+    EmployeeFormComponent,
+    EmployeeViewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: EmployeeListComponent },
+      { path: 'add', component: EmployeeFormComponent },
+      { path: 'edit/:id', component: EmployeeFormComponent },
+      { path: 'view/:id', component: EmployeeViewComponent }
+    ])
   ],
-  providers: [BillingService, MenuService, SnackbarService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
