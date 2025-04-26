@@ -11,15 +11,7 @@ export class EmployeeService {
   private nextId = 1;
 
   constructor() {
-    this.addEmployee({
-      id: this.nextId++,
-      name: 'John Doe',
-      companyName: 'Tech Corp',
-      email: 'john@techcorp.com',
-      contactNo: '1234567890',
-      designation: 'Software Engineer',
-      avatar: this.getRandomAvatar()
-    });
+  
   }
 
   getEmployees(): Observable<Employee[]> {
@@ -50,11 +42,10 @@ export class EmployeeService {
 
   getRandomAvatar(): string {
     const avatars = [
-      'https://i.pravatar.cc/150?img=1',
-      'https://i.pravatar.cc/150?img=2',
-      'https://i.pravatar.cc/150?img=3',
-      'https://i.pravatar.cc/150?img=4',
-      'https://i.pravatar.cc/150?img=5'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXpmpA6rd6htw-iutNYcVml3-hwpFfyPjDnw&s',
+      'https://cdn.britannica.com/65/194465-050-50F2A305/Vladimir-Putin-questions-news-conference-2016.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8r3KoUKQNbDetUZZ39XphuRnPnoeqEVo7_A&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTqTd-8gQZg7_y2-hiLZcYsG2kOgeLDeRLsQ&s'
     ];
     return avatars[Math.floor(Math.random() * avatars.length)];
   }
